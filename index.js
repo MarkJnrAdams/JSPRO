@@ -1,3 +1,8 @@
+/* Adams Mark Oche
+   UJ/2017/NS/1070
+   Computer Science */
+
+
 var students = [
     {
         name: "Ifeoma",
@@ -243,7 +248,7 @@ var students = [
 
 ];
 
-var max = 0
+var max = 0;
 
 students.forEach(function(value){
     if(max < value.height){
@@ -251,8 +256,37 @@ students.forEach(function(value){
     }
 });
 
-console.log(max);
+function avg(arrays){
+    var number = 0;
+    for (var i=0;i<arrays.length;i++){
+        number = number+arrays[i];
+    }
+    return number/arrays.length;
+}
 
-var studentA = students.filter((student)=> student.height == max);
-console.log (studentA);
+var a=0;
+var b;
+
+students.forEach(function(item,index,data){
+    if(a<avg(item.grade)){
+        a = avg(item.grade);
+        b = index;
+    }
+});
+
+var maximum = 0
+
+students.forEach(function(value){
+    if(maximum < value.height){
+        maximum = value.height;
+    }
+});
+
+console.log(maximum);
+
+var studentA = students.filter((student)=> student.height == maximum);
+console.log ("\nThe tallest student's profile:\n",studentA);
+
+console.log("\nThe student with the highest grade profile:\n", students[b]);
+
 
